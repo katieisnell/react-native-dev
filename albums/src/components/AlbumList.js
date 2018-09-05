@@ -17,7 +17,10 @@ class AlbumList extends Component {
 
     renderAlbums() {
         // We create a map of state.albums to a <Text> tag with the album title in it
-        return this.state.albums.map(album => <Text>{album.title}</Text>);
+        return this.state.albums.map(album => 
+            // We need a unique key, so we use the album's title
+            <Text key={album.title}>{album.title}</Text>
+        );
     }
 
     // Every class MUST have a render(), and this is called first when the class is called
