@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
     state = { albums: [] };
@@ -19,7 +20,7 @@ class AlbumList extends Component {
         // We create a map of state.albums to a <Text> tag with the album title in it
         return this.state.albums.map(album => 
             // We need a unique key, so we use the album's title
-            <Text key={album.title}>{album.title}</Text>
+            <AlbumDetail key={album.title} album={album} />
         );
     }
 
