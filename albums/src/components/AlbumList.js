@@ -15,11 +15,18 @@ class AlbumList extends Component {
             .then(response => this.setState({ albums: response.data }));
     }
 
+    renderAlbums() {
+        // We create a map of state.albums to a <Text> tag with the album title in it
+        return this.state.albums.map(album => <Text>{album.title}</Text>);
+    }
+
     // Every class MUST have a render(), and this is called first when the class is called
     render() {
+        console.log(this.state);
+
         return (
             <View>
-                <Text>Album list...</Text>
+                {this.renderAlbums()}
             </View>
         );
     } // Note we don't need a semi-colon at the end of the render() method
