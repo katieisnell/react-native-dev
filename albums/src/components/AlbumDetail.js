@@ -7,18 +7,24 @@ import CardSection from './CardSection';
 const AlbumDetail = ({ album }) => {
     // Now we further destructure the title, artist and thumbnail from the album
     const { title, artist, thumbnail_image } = album;
+    const {
+        headerContentStyle,
+        headerTextStyle,
+        thumbnailStyle,
+        thumbnailContainerStyle
+    } = styles;
 
     return (
         <Card>
             <CardSection>         
-                <View>
+                <View style={thumbnailContainerStyle}> 
                     <Image 
                         source={{ uri: thumbnail_image }} 
-                        style={styles.thumbnailStyle}
+                        style={thumbnailStyle}
                     />
                 </View>
-                <View style={styles.headerContentStyle}>
-                    <Text>{title}</Text>
+                <View style={headerContentStyle}>
+                    <Text style={headerTextStyle}>{title}</Text>
                     <Text>{artist}</Text>
                 </View>
             </CardSection>
@@ -31,9 +37,18 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'space-around'
     },
+    headerTextStyle: {
+        fontSize: 18
+    },
     thumbnailStyle: {
         height: 50,
         width: 50
+    },
+    thumbnailContainerStyle: {
+        justifyContent: 'center',
+        alignItem: 'center',
+        marginLeft: 0,
+        marginRight: 10
     }
 };
 
