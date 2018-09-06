@@ -6,12 +6,13 @@ import CardSection from './CardSection';
 // Here we destructure the album from the props object
 const AlbumDetail = ({ album }) => {
     // Now we further destructure the title, artist and thumbnail from the album
-    const { title, artist, thumbnail_image } = album;
+    const { title, artist, thumbnail_image, image } = album;
     const {
         headerContentStyle,
         headerTextStyle,
         thumbnailStyle,
-        thumbnailContainerStyle
+        thumbnailContainerStyle,
+        imageStyle
     } = styles;
 
     return (
@@ -27,6 +28,12 @@ const AlbumDetail = ({ album }) => {
                     <Text style={headerTextStyle}>{title}</Text>
                     <Text>{artist}</Text>
                 </View>
+            </CardSection>
+            <CardSection>
+                <Image 
+                    source={{ uri: image }} 
+                    style={imageStyle} 
+                />
             </CardSection>
         </Card>
     );
@@ -49,6 +56,11 @@ const styles = {
         alignItem: 'center',
         marginLeft: 0,
         marginRight: 10
+    },
+    imageStyle: {
+        height: 200,
+        flex: 1,
+        width: null
     }
 };
 

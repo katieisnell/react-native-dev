@@ -7,7 +7,8 @@ import AlbumList from './src/components/AlbumList';
 
 // Create our component
 const App = () => (
-    <View>
+    // flex: 1 indicates we want the scroll to go all the way to the bottom of the view
+    <View style={{ flex: 1 }}>
         <Header headerText={'Your albums'} />
         <AlbumList />
     </View>
