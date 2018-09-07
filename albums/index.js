@@ -7,7 +7,7 @@ import AlbumList from './src/components/AlbumList';
 
 // Create our component
 const App = () => (
-    // flex: 1 indicates we want the scroll to go all the way to the bottom of the view
+    // flex: 1 property expands this component to fill the entire content area of device
     <View style={{ flex: 1 }}>
         <Header headerText={'Your albums'} />
         <AlbumList />
