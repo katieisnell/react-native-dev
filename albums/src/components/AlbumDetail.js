@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -7,7 +7,7 @@ import Button from './Button';
 // Here we destructure the album from the props object
 const AlbumDetail = ({ album }) => {
     // Now we further destructure the title, artist and thumbnail from the album
-    const { title, artist, thumbnail_image, image } = album;
+    const { title, artist, thumbnail_image, image, url } = album;
     const {
         headerContentStyle,
         headerTextStyle,
@@ -30,19 +30,17 @@ const AlbumDetail = ({ album }) => {
                     <Text>{artist}</Text>
                 </View>
             </CardSection>
-
             <CardSection>
                 <Image 
                     source={{ uri: image }} 
                     style={imageStyle} 
                 />
             </CardSection>
-
             <CardSection>
-                <Button />
+                <Button buttonPress={() => Linking.openURL(url)}>
+                    Buy now
+                </Button>
             </CardSection>
-
-
         </Card>
     );
 };
