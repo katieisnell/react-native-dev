@@ -1,0 +1,3 @@
+rootProject.name = 'tec_stac'
+
+include ':app'
