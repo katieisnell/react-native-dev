@@ -3,7 +3,10 @@ import { View, Text } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import firebase from 'firebase';
+
+import LoginForm from './components/LoginForm';
 import reducers from './reducers';
+
 import firebase_credentials from './data/firebase_credentials.json';
 
 class App extends Component {
@@ -15,9 +18,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View>
-          <Text>Our initial app</Text>
-        </View>
+        <LoginForm />
       </Provider>
 
     );
