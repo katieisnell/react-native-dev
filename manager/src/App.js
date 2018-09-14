@@ -20,7 +20,6 @@ class App extends Component {
       <Provider store={createStore(reducers)}>
         <LoginForm />
       </Provider>
-
     );
   }
 }
